@@ -28,4 +28,4 @@ const person = {
 // null & undefined
 let dog;
 console.log(dog);
-
+// checking
