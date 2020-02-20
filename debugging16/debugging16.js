@@ -37,14 +37,14 @@ function go() {
 // Grabbing Elements
 // select elements in dev tools, then go to console $0 is the last element clicked ($1,2 2nd & 3rd)
 
-
 // Breakpoints
 // const people = [
 //   { name: "Gearoid", cool: true, country: "Canada" },
 //   { name: "Scott", cool: true, country: "Merica" },
 //   { name: "Snickers", cool: false, country: "Dog Country" }
 // ];
-// debugger; ------ When the console is open, gives a break in the code
+// debugger;
+// ------ When the console is open, gives a break in the code
 //  can also set a breakpoint when you click on a line number
 // people.forEach((person, index) => {
 //   console.log(person.name);
@@ -58,11 +58,17 @@ function go() {
 // Break On Attribute
 // sources in dev tools, set breakpoints in xhr,fetch,dom
 // Some Setup Code
+const test = { b: 1 };
+function other() {
+  var nothere = 1;
+}
 
 function doALotOfStuff() {
   console.group("Doing some stuff");
   console.log("Hey Im one");
   console.warn("watch out!");
+  const x = { a: 1 };
+  debugger;
   console.error("hey");
   console.groupEnd("Doing some stuff");
 }
@@ -71,8 +77,6 @@ console.log(doALotOfStuff(people));
 function doctorize(name) {
   return `Dr. ${name}`;
 }
-
-
 
 const button = document.querySelector(".bigger");
 button.addEventListener("click", function(e) {
