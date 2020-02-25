@@ -6,7 +6,6 @@ const squarebutton = document.querySelector(".square");
 const cookiebutton = document.querySelector(".cookie");
 const MOVE_AMOUNT = 10;
 
-
 const { width, height } = canvas;
 
 let x = Math.floor(Math.random() * width);
@@ -69,9 +68,15 @@ function clearCanvas() {
 }
 
 window.addEventListener("keydown", handleKey);
-
+function makeSquare() {
+  ctx.beginPath();
+  ctx.moveTo(100, 100);
+  ctx.lineTo(250, 100);
+  ctx.lineTo(250, 250);
+  ctx.lineTo(100, 250);
+  ctx.closePath();
+  ctx.stroke();
+}
 shakebutton.addEventListener("click", clearCanvas);
-squarebutton.addEventListener("click", clearCanvas);
+squarebutton.addEventListener("click", makeSquare);
 cookiebutton.addEventListener("click", clearCanvas);
-
-
