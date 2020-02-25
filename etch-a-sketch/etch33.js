@@ -67,7 +67,6 @@ function clearCanvas() {
   );
 }
 
-window.addEventListener("keydown", handleKey);
 function makeSquare() {
   ctx.beginPath();
   ctx.moveTo(100, 100);
@@ -114,19 +113,19 @@ function drawCookie() {
   ctx.beginPath();
   ctx.moveTo(975, 400);
   ctx.lineTo(975, 550);
-ctx.stroke();
-
-ctx.beginPath();
-  ctx.moveTo(1200, 400);
-  ctx.lineTo(1050, 400);
-ctx.lineTo(1050, 550);
-  ctx.lineTo(1200, 550);
-ctx.moveTo(1050, 475);
-ctx.lineTo(1200, 475);
   ctx.stroke();
 
+  ctx.beginPath();
+  ctx.moveTo(1200, 400);
+  ctx.lineTo(1050, 400);
+  ctx.lineTo(1050, 550);
+  ctx.lineTo(1200, 550);
+  ctx.moveTo(1050, 475);
+  ctx.lineTo(1200, 475);
+  ctx.stroke();
 }
 
+window.addEventListener("keydown", handleKey);
 shakebutton.addEventListener("click", clearCanvas);
 squarebutton.addEventListener("click", makeSquare);
 cookiebutton.addEventListener("click", drawCookie);
