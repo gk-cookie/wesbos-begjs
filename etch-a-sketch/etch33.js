@@ -68,4 +68,4 @@ function clearCanvas() {
 window.addEventListener("keydown", handleKey);
 shakebutton.addEventListener("click", clearCanvas);
 
-function drawSquare()
+
