@@ -77,6 +77,56 @@ function makeSquare() {
   ctx.closePath();
   ctx.stroke();
 }
+
+function drawCookie() {
+  ctx.beginPath();
+  ctx.moveTo(300, 400);
+  ctx.lineTo(150, 400);
+  ctx.lineTo(150, 550);
+  ctx.lineTo(300, 550);
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(400, 400);
+  ctx.lineTo(550, 400);
+  ctx.lineTo(550, 550);
+  ctx.lineTo(400, 550);
+  ctx.closePath();
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(600, 400);
+  ctx.lineTo(750, 400);
+  ctx.lineTo(750, 550);
+  ctx.lineTo(600, 550);
+  ctx.closePath();
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(800, 400);
+  ctx.lineTo(800, 550);
+  ctx.moveTo(800, 475);
+  ctx.lineTo(900, 400);
+  ctx.moveTo(800, 475);
+  ctx.lineTo(900, 550);
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.moveTo(975, 400);
+  ctx.lineTo(975, 550);
+ctx.stroke();
+
+ctx.beginPath();
+  ctx.moveTo(1200, 400);
+  ctx.lineTo(1050, 400);
+ctx.lineTo(1050, 550);
+  ctx.lineTo(1200, 550);
+ctx.moveTo(1050, 475);
+ctx.lineTo(1200, 475);
+  ctx.stroke();
+
+}
+
 shakebutton.addEventListener("click", clearCanvas);
 squarebutton.addEventListener("click", makeSquare);
-cookiebutton.addEventListener("click", clearCanvas);
+cookiebutton.addEventListener("click", drawCookie);
