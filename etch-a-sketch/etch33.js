@@ -2,7 +2,10 @@ const canvas = document.querySelector("#etch-a-sketch");
 const ctx = canvas.getContext("2d");
 
 const shakebutton = document.querySelector(".shake");
+const squarebutton = document.querySelector(".square");
+const cookiebutton = document.querySelector(".cookie");
 const MOVE_AMOUNT = 10;
+
 
 const { width, height } = canvas;
 
@@ -66,6 +69,9 @@ function clearCanvas() {
 }
 
 window.addEventListener("keydown", handleKey);
+
 shakebutton.addEventListener("click", clearCanvas);
+squarebutton.addEventListener("click", clearCanvas);
+cookiebutton.addEventListener("click", clearCanvas);
 
 
