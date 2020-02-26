@@ -29,6 +29,9 @@ function draw({ key }) {
   ctx.beginPath();
   ctx.moveTo(x, y);
   switch (key) {
+    case "s":
+        makeSquare();
+        break;
     case "ArrowUp":
       y -= MOVE_AMOUNT;
       break;
@@ -43,6 +46,7 @@ function draw({ key }) {
       break;
     default:
       break;
+      
   }
   ctx.lineTo(x, y);
   ctx.stroke();
@@ -68,12 +72,19 @@ function clearCanvas() {
 }
 
 function makeSquare() {
+  // x and y have a value at this point
+  // you can update x and y
+
   ctx.beginPath();
-  ctx.moveTo(100, 100);
-  ctx.lineTo(250, 100);
-  ctx.lineTo(250, 250);
-  ctx.lineTo(100, 250);
+  ctx.moveTo(x, y);
+  x += 150;
+  ctx.lineTo(x, y);
+  y += 150;
+  ctx.lineTo(x, y);
+  x -= 150;
+  ctx.lineTo(x, y);
   ctx.closePath();
+  y -= 150;
   ctx.stroke();
 }
 
