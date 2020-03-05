@@ -63,3 +63,18 @@ function sayHello(name) {
   yell();
 }
 sayHello(`gearoid`);
+
+// How I used scope in Space Invaders
+function drawShip() {
+  ctx.beginPath();
+  ctx.rect(x, y, 125, 125);
+  ctx.stroke();
+  ctx.fill();
+  ctx.closePath();
+}
+// I used this to create the ship in the space invaders game, x,y are not global variables
+// I cannot access x and y unless I give them a value outside the function i.e.
+// let x = canvas.width / 2;
+// let y = canvas.height - 200;
+// I now can use the x and y in the global scope as they are global variables
+
