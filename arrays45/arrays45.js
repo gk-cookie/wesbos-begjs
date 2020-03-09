@@ -64,4 +64,35 @@ function createRange(start, end) {
 }
 createRange(3, 11);
 
+const toppings = ['Mushrooms ', 'Tomatoes', 'Eggs', 'Chili', 'Lettuce', 'Avocado', 'Chiles', 'Bacon', 'Pickles', 'Onions', 'Cheese'];
 
+const buns = ['egg', 'wonder', 'brioche'];
+
+const meats = {
+  chicken: 10,
+  beef: 5,
+  pork: 7
+};
+
+const prices = {
+  hotDog: 453,
+  burger: 765,
+  sausage: 634,
+  corn: 234,
+};
+
+Object.keys(meats).forEach(qty => {
+    console.log(qty);
+})
+
+Object.entries(meats).forEach(entry => {
+    console.log(entry);
+})
+
+Object.entries(meats).forEach(entry => {
+    // const key = entry[0];
+    // const value = entry[1];
+  const [key, value] = entry;
+    console.log(key, value);
+    
+})
