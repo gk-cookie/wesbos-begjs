@@ -66,7 +66,7 @@ createRange(3, 11);
 
 const toppings = ['Mushrooms ', 'Tomatoes', 'Eggs', 'Chili', 'Lettuce', 'Avocado', 'Chiles', 'Bacon', 'Pickles', 'Onions', 'Cheese'];
 
-const buns = ['egg', 'wonder', 'brioche'];
+const buns = ['white', 'sesame', 'brioche'];
 
 const meats = {
   chicken: 10,
@@ -96,3 +96,75 @@ Object.entries(meats).forEach(entry => {
     console.log(key, value);
     
 })
+// Instance Method
+console.log(buns.join(`or`));
+// turns an array into a string
+
+const meatString = `steak, burgers, sausages, chicken`;
+console.log(meatString.split(`,`));
+// turns a string into an array. The , splits the string to create 4 elements
+
+const lastTopping = toppings.pop();
+console.log(toppings);
+console.log(lastTopping);
+// Removes last item in the array
+
+toppings.push(lastTopping);
+// Adds it back with a push
+
+const firstTopping = toppings.shift();
+console.log(firstTopping);
+// Removes first item with shift
+
+toppings.unshift(firstTopping);
+// add it back with unshift
+
+let newToppings = toppings.slice(0, toppings.length - 1);
+// removes last item without mutating array
+
+newToppings = [...newToppings, toppings[toppings.length - 1]];
+console.log(newToppings);
+//  adding it back in
+
+const toppingsCopy = toppings.slice(0);
+toppings[2] = `black pudding`;
+console.log(toppingsCopy);
+console.log(toppings);
+// creates copy of orginal array
+
+const toppingsCopy2 = [...toppings];
+// creates a copy using spreads
+
+toppingsCopy2.splice(3,5);
+console.log(toppingsCopy2);
+// taking out items 3 to 5 using splice
+
+const chiliIndex = toppings.indexOf(`Chili`);
+console.log(chiliIndex);
+// check the index of an item
+
+const isInToppings = toppings.includes(`curry`);
+console.log(isInToppings);
+// .includes checks if an item is in the array
+
+if(!isInToppings) {
+    toppings.push(`Curry`);
+}
+console.log(toppings);
+// if curry is not on the toppings, add it
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
