@@ -7,8 +7,8 @@ function logTopping(topping, index, originalArray) {
     const nextTopping = originalArray[index + 1];
     const prevTopping = originalArray[index - 1];
 
-    nextTopping ? console.log(nextTopping) : `null`;
-    prevTopping ? console.log(prevTopping) : `null`;
+    nextTopping ? console.log(nextTopping) : ``;
+    prevTopping ? console.log(prevTopping) : ``;
     
     index === originalArray.length -1
     ? console.log(`You are done`)
