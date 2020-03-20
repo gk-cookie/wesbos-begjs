@@ -60,3 +60,19 @@ const people = [
         }
     }
 ]
+
+// console.log(people);
+
+const cleanPeople = people.map(function (person) {
+    const birthday = new Date(person.birthday).getTime;
+    const now = Date.now();
+   
+    console.log(birthday, now);
+   
+    const age = now - birthday;
+   
+    console.log(age);
+    
+    
+    
+});
