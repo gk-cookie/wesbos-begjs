@@ -20,12 +20,12 @@ function Gallery(gallery) {
 
   function closeModal() {
     modal.classList.remove("open");
-
+  }
     function handleClickOutside(e) {
         if (e.target === e.currentTarget) {
           closeModal();
         }
-    }
+    
   }
 
   function showImage(el) {
@@ -43,7 +43,7 @@ function Gallery(gallery) {
   }
 
   images.forEach(image =>
-    image.addEventListener("click", showImage(e.currentTarget))
+    image.addEventListener("click", e => showImage(e.currentTarget))
   );
   modal.addEventListener("click", handleClickOutside);
 }
