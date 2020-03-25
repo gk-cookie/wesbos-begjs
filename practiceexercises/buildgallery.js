@@ -16,16 +16,33 @@ function Gallery(gallery) {
       return;
     }
     modal.classList.add("open");
+    window.addEventListener("keyup", handleKeyUp);
+    nextButton.addEventListener("click", showNextImage);
+    prevButton.addEventListener("click", showPrevImage);
   }
 
   function closeModal() {
     modal.classList.remove("open");
+    window.removeEventListener("keyup", handleKeyUp);
+    nextButton.removeEventListener("click", showNextImage);
+    prevButton.removeEventListener("click", showPrevImage);
   }
-    function handleClickOutside(e) {
-        if (e.target === e.currentTarget) {
-          closeModal();
-        }
-    
+  function handleClickOutside(e) {
+    if (e.target === e.currentTarget) {
+      closeModal();
+    }
+  }
+  function handleKeyUp(event) {
+    if (event.key === "Escape") closeModal();
+    if (event.key === "ArrowRight") showNextImage();
+    if (event.key === "ArrowLeft") showPrevImage();
+  }
+  function showNextImage() {
+    showImage(currentImage.nextElementSibling || gallery.firstElementChild);
+  }
+
+  function showPrevImage() {
+    showImage(currentImage.previousElementSibling || gallery.lastElementChild);
   }
 
   function showImage(el) {
