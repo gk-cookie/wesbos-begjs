@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>This Keyword</title>
+    <link rel="stylesheet" href="../base.css" />
+  </head>
+
+  <body>
+    <button class="one">Button 1</button>
+    <button class="two">Button 2</button>
+  </body>
+
+  <script>
+    function pizza(toppings = [], customer) {
+      this.toppings = toppings;
+      this.customer = customer;
+      this.id = Math.floor(Math.random() * 16777215).toString(16);
+      // id from Paul Irish blog
+    }
+    const pepperoniPizza = new pizza([`pepperoni`], `Cookie`);
+    const supremePizza = new pizza([`olives`, `mushrooms`, `chicken`], `Helen`);
+console.log(pepperoniPizza, supremePizza);
+
+function car(brand, features = [], colour) {
+
+    this.brand = brand;
+    this.features = features;
+    this.colour = colour;
+}
+const newCar1 = new car(`vw`, [`sunroof`, `leather seats`, `alloys`], `red`);
+const newCar2 = new car(`Toyota`, [`automatic`, `hybrid`], `silver`);
+console.log(newCar1, newCar2);
+
+
+    const button1 = document.querySelector(`.one`);
+    const button2 = document.querySelector(`.two`);
+
+    function theButton() {
+      console.log(`outside`, this);
+      setTimeout(() => {
+        console.log(`inside`, this);
+        this.textContent = `You Clicked`;
+      }, 1000);
+    }
+    button1.addEventListener(`click`, theButton);
+    button2.addEventListener(`click`, theButton);
+  </script>
+</html>
