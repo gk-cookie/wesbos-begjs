@@ -1,0 +1,27 @@
+.modal {
+    
+    position: fixed;
+    left: 100px;
+    top: 100px;
+    width: 350px;
+    height: 350px;
+    background-color: black;
+ 
+.open {
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
