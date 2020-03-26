@@ -1,12 +1,17 @@
 const buttonPressed = document.querySelector(".button");
 const modal = document.querySelector(".modal");
+const pictures = document.querySelectorAll(".picture");
 
-function buttPress() {
-  console.log("button pressed");
-  if (modal.classList.contains("open")) {
-    document.querySelector(".modal").classList.remove("open");
-  } else {
-    document.querySelector(".modal").classList.add("open");
-  }
+function picClick() {
+  console.log(`picture clicked`);
 }
-buttonPressed.addEventListener("click", buttPress);
+
+function handlePictureButtonClick(event) {
+  const button = event.currentTarget;
+  const picture = button.closest(".picture");
+  console.log(picture);
+}
+
+pictures.forEach(button =>
+  button.addEventListener("click", handlePictureButtonClick)
+);
