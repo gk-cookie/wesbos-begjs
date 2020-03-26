@@ -1,14 +1,14 @@
 const buttonPressed = document.querySelector(".button");
-const modal = document.querySelector(".modal");
+const innerModal = document.querySelector(".inner-modal");
 const pictures = document.querySelectorAll(".picture");
+const outerModal = document.querySelector(".outer-modal");
 
 function picClick() {
   console.log(`picture clicked`);
 }
-function openModal() {
-  document.querySelector(".modal").classList.add("open");
-  console.log(`modal Open`);
-  
+
+function openOuterModal() {
+  modalOuter.classList.add("open");
 }
 
 function handlePictureButtonClick(event) {
@@ -16,11 +16,9 @@ function handlePictureButtonClick(event) {
   const picture = button.closest(".picture");
   const imgSrc = picture.querySelector("img").src;
   console.log(imgSrc);
-  const inner = `<img src="${imgSrc.replace("300", "600")}" />`;
-  console.log(inner);
-  
-  modal.innerHTML = inner;
-  openModal();
+  innerModal.innerHTML = `<img src="${imgSrc.replace("300", "600")}" />`;
+
+  outerModal.classList.add(`open`);
 }
 
 pictures.forEach(button =>
