@@ -7,7 +7,7 @@ function picClick() {
   console.log(`picture clicked`);
 }
 
-function openOuterModal() {
+function closeModal() {
   modalOuter.classList.add("open");
 }
 
