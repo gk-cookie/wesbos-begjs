@@ -2,8 +2,8 @@ function Slider(slider) {
   if (!slider instanceof Element) {
     throw new Error("No Slider passed in");
   }
-  let current;
   let prev;
+  let current;
   let next;
 
   const slides = slider.querySelector(".slides");
@@ -18,9 +18,22 @@ function Slider(slider) {
   }
 
   function applyClasses() {
-    current.classList.add('current');
-    prev.classList.add('prev');
-    next.classList.add('next');
+    current.classList.add("current");
+    prev.classList.add("prev");
+    next.classList.add("next");
+  }
+
+  function move(direction) {
+    const classesToRemove = ["prev", "current", "next"];
+    prev.classList.remove(...classesToRemove);
+    current.classList.remove(...classesToRemove);
+    next.classList.remove(...classesToRemove);
+    if (direction === "back") {
+      [prev, current, next] = [prev.previousElementSibling, prev, current];
+    } else {
+      [prev, current, next] = [current, next, next.nextElementSibling];
+    }
+    applyClasses();
   }
   startSlider();
   applyClasses();
