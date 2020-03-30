@@ -21,6 +21,18 @@
       // id from Paul Irish blog
     }
 
+    String.prototype.sarcastic = function() {
+      const sarcastic = this.split("")
+        .map((char, i) => {
+          if (i % 2) {
+            return char.toLocaleUpperCase();
+          } else {
+            return char.toLocaleLowerCase();
+          }
+        })
+        .join("");
+      return sarcastic;
+    };
     pizza.prototype.eat = function() {
       if (this.slices > 0) {
         this.slices = this.slices - 1;
