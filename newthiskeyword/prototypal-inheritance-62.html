@@ -21,6 +21,12 @@
       // id from Paul Irish blog
     }
 
+    pizza.prototype.description = function() {
+     console.log(
+      `This pizza is for ${this.customer}, it has the following toppings ${this.toppings} and there are ${this.slices} left`
+     );
+    };
+
     String.prototype.sarcastic = function() {
       const sarcastic = this.split("")
         .map((char, i) => {
