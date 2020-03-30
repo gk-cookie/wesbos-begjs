@@ -24,21 +24,27 @@ function Slider(slider) {
     prev.classList.remove(...classToRemove);
     current.classList.remove(...classToRemove);
     next.classList.remove(...classToRemove);
-    if(direction === 'back') {
-        [prev, current, next] = [prev.previousElementSibling || slides.lastElementChild, 
-            prev, current]; 
-        }
-     else {
-        [prev, current, next] = [ current, next, next.nextElementSibling || slides.firstElementChild];
-            }
-    
-    
+    if (direction === "back") {
+      [prev, current, next] = [
+        prev.previousElementSibling || slides.lastElementChild,
+        prev,
+        current
+      ];
+    } else {
+      [prev, current, next] = [
+        current,
+        next,
+        next.nextElementSibling || slides.firstElementChild
+      ];
+    }
 
-    applyClasses();  
-}
-  
+    applyClasses();
+  }
 
   startSlider();
+
+  prevButton.addEventListener("click", () => move("back"));
+  nextButton.addEventListener("click", move);
 }
 
 const mySlider = Slider(document.querySelector(".slider"));
