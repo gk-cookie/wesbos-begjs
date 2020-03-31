@@ -7,18 +7,20 @@
     <link rel="stylesheet" href="../base.css" />
   </head>
 
-  
   <body>
- <style>
-    .turt {
+    <style>
+      .turt {
         position: relative;
         --x: 0;
         --y: 0;
-        transform: translateX(var(--x)) translateY(var(--y));
-    } 
- </style>     
-      
-      <img width="200" src="./turtle.png" alt="turt" class="turt" />
+        --rotateX: 0;
+        --rotate: 0;
+        transform: translateX(var(--x)) translateY(var(--y))
+          rotateY(var(--rotateX)) rotate(var(--rotate));
+      }
+    </style>
+
+    <img width="200" src="./turtle.png" alt="turt" class="turt" />
   </body>
 
   <script src="switch-statements-40.js"></script>
