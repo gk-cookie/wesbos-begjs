@@ -36,4 +36,8 @@ if (place.includes("clare")) {
 
 // includes method returns a boolean
 
+const placeInclude =  place.includes("clare");
 
+if(placeInclude) {
+    console.log('Clare is in Cooraclare');
+}
