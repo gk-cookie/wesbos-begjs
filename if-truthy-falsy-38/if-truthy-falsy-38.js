@@ -49,18 +49,3 @@ if (dog) {
 } else {
   console.log("you dont have a dog");
 }
-
-//  Truthy and Falsey Values
-// Truthy
-// 1 
-// - 10 All numbers except 0
-// a full string
-// a string of zero
-// an empty array or object
-
-// Falsy
-// 0
-// undefined variable
-// variable set to null
-// a variable set to NaN (not a number) - 'hello' - 10 = NaN
-// a string of nothing ''
