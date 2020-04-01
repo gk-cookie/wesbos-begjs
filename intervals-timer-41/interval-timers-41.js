@@ -33,7 +33,6 @@ const poopInterval = setInterval(function() {
   console.log("poop");
 }, 1000);
 
-setTimeout(function () {
-    clearInterval(poopInterval);
-}, 6000)
-
+setTimeout(function() {
+  clearInterval(poopInterval);
+}, 6000);
