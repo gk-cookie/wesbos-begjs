@@ -12,7 +12,7 @@ function Slider(slider) {
   this.applyClasses();
 
   prevButton.addEventListener("click", () => this.move("back"));
-  nextButton.addEventListener("click", this.move);
+  nextButton.addEventListener("click", () => this.move());
 }
 
 Slider.prototype.startSlider = function() {
