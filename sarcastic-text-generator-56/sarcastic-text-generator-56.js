@@ -13,14 +13,17 @@ const filters = {
     }
     return letter.toLowerCase();
   },
-  funky: function() {},
+  funky: function(letter) {},
   unable: function() {}
 };
 
 function transformText(text) {
-  const mod = Array.from(text).map(filters.sarcastic);
+  const filter = document.querySelector('[name="filter"]:checked').value;
+  console.log(filter);
+
+  const mod = Array.from(text).map(filters[filter]);
   console.log(mod);
-  result.textContent = mod.join('');
+  result.textContent = mod.join("");
 }
 
 textarea.addEventListener("input", e => transformText(e.target.value));
