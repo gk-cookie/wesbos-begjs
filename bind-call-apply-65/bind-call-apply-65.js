@@ -74,11 +74,43 @@ console.log(lookFor("p"));
 
 const bill = {
   total: 1000,
-  calculate: function(taxRate) {
+  calculate: function(taxRate, tipRate) {
     return this.total + this.total * taxRate;
+  },
+  describe(mealType, drinkType, taxRate) {
+    console.log(
+      `Your meal of ${mealType} with a drink of ${drinkType} was ${this.calculate(
+        taxRate
+      )}`
+    );
   }
 };
+
+const bill2 = {
+  total: 1000,
+  calculate: function(taxRate, tipRate) {
+    return this.total + this.total * taxRate + this.total * tipRate;
+  }
+};
+
 const total = bill.calculate(0.21);
 console.log(total);
-const calc = bill.calculate.bind({ total: 758 });
-console.log(calc(0.21));
+const calc = bill2.calculate.bind({ total: 758 }, 0.21, 0.25);
+console.log(calc());
+// you can pass arguments directly into the bind function, this will always be
+// first and then you can add in the arguements from the calculate within the bill object
+
+// Call and Apply
+
+const total2 = bill.calculate.call({ total: 758 }, 0.21);
+console.log(total2);
+// .call does the same thing that .bind does except it calls the function immediately
+
+const total3 = bill.calculate.apply({ total: 2000 }, [0.21]);
+console.log(total3);
+
+const myMeal = bill.describe.call(bill, "pizza", "beer", 0.21);
+console.log(myMeal);
+
+const myMeal2 = bill.describe.apply(bill, ["pizza", "beer", 0.21]);
+console.log(myMeal);
