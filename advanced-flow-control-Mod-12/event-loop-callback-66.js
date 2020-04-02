@@ -9,8 +9,13 @@ const go = document.querySelector(".go");
 go.addEventListener("click", function(e) {
   const el = e.currentTarget;
   el.textContent = "GO!";
-  console.log(el);
   setTimeout(function() {
-    el.classList.add('circle');
+    el.classList.add("circle");
+    setTimeout(function() {
+      el.classList.add("red");
+      setTimeout(function() {
+        el.classList.remove("circle");
+      }, 250);
+    }, 500);
   }, 2000);
 });
