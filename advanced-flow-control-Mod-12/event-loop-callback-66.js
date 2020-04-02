@@ -4,10 +4,13 @@ setTimeout(function() {
 }, 2000);
 console.log("ending");
 
-const go = document.querySelector('.go')
+const go = document.querySelector(".go");
 
-go.addEventListener('click', function(e) {
-    const el = e.currentTarget;
-    console.log(el);
-    
-})
+go.addEventListener("click", function(e) {
+  const el = e.currentTarget;
+  el.textContent = "GO!";
+  console.log(el);
+  setTimeout(function() {
+    el.classList.add('circle');
+  }, 2000);
+});
