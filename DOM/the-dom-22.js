@@ -43,8 +43,36 @@ pic.classList.toggle("round");
 console.log(pic.classList);
 
 function toggleRound() {
-    pic.classList.toggle('round');
+  pic.classList.toggle("round");
 }
 
-pic.addEventListener('click', toggleRound);
+pic.addEventListener("click", toggleRound);
+
+// Attributes - Built in & Custom
+
+pic.alt = "Nice Pic"; // setter
+pic.width = 200; // setter
+
+console.log(pic.naturalWidth); // getter
+//  its 0 because it checks the width before its loaded
+
+pic.addEventListener("load", function() {
+  console.log(pic.naturalWidth); // getter
+});
+// Load gets the data after all the pics and css have been loaded
+
+console.log(pic.getAttribute('alt')); // getter
+pic.setAttribute('alt', 'really nice pic'); // setter
+console.log(pic.getAttribute('alt')); // getter
+
+const custom = document.querySelector('.custom');
+console.log(custom.dataset);
+
+custom.addEventListener('click', function() {
+    alert(`Welcome ${custom.dataset.name} ${custom.dataset.last}`)
+})
+
+
+
+
 
