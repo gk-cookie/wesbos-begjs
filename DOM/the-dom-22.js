@@ -31,6 +31,20 @@ console.log(pintList.textContent);
 // pintList.textContent = `${pintList.textContent}- 1 pint`;
 // console.log(pintList.textContent);
 
-pintList.insertAdjacentText('beforeend','- 1 pint')
+pintList.insertAdjacentText("beforeend", "- 1 pint");
 console.log(pintList.textContent);
+
+// Classes
+
+const pic = document.querySelector(".nice");
+pic.classList.add("open");
+pic.classList.remove("cool");
+pic.classList.toggle("round");
+console.log(pic.classList);
+
+function toggleRound() {
+    pic.classList.toggle('round');
+}
+
+pic.addEventListener('click', toggleRound);
 

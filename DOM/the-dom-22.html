@@ -8,6 +8,8 @@
   </head>
 
   <body>
+    <img class="nice cool" src="http://source.unsplash.com/random/600x400" />
+
     <div class="items">
       <div class="item">
         <img src="http://source.unsplash.com/random/300x300" />
@@ -24,14 +26,22 @@
       </div>
       <article class="item">
         <h2>I'm an article</h2>
-        <p class='pints'> This is how many pints i drank </p>
+        <p class="pints">This is how many pints i drank</p>
       </article>
     </div>
-<style>
-    h2 span {
+    <style>
+      h2 span {
         display: none;
-    }
-</style>
+      }
+      img {
+        transition: all 0.2s;
+      }
+      .round {
+        border-radius: 50%;
+        transform: rotate(1turn) scale(2); 
+        box-shadow: 10px;
+      }
+    </style>
     <script src="the-dom-22.js"></script>
   </body>
 </html>
