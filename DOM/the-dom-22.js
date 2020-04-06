@@ -61,18 +61,13 @@ pic.addEventListener("load", function() {
 });
 // Load gets the data after all the pics and css have been loaded
 
-console.log(pic.getAttribute('alt')); // getter
-pic.setAttribute('alt', 'really nice pic'); // setter
-console.log(pic.getAttribute('alt')); // getter
+console.log(pic.getAttribute("alt")); // getter
+pic.setAttribute("alt", "really nice pic"); // setter
+console.log(pic.getAttribute("alt")); // getter
 
-const custom = document.querySelector('.custom');
+const custom = document.querySelector(".custom");
 console.log(custom.dataset);
 
-custom.addEventListener('click', function() {
-    alert(`Welcome ${custom.dataset.name} ${custom.dataset.last}`)
-})
-
-
-
-
-
+custom.addEventListener("click", function() {
+  alert(`Welcome ${custom.dataset.name} ${custom.dataset.last}`);
+});
