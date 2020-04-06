@@ -18,15 +18,37 @@ function makePizza(toppings = []) {
   return pizzaPromise;
 }
 
-async function go() {
-  try {
-    const pizza = await makePizza(["pineapple"]);
-    console.log(pizza);
-  } catch (err) {
-    console.log("ohh noo");
-
-    console.log(err);
-  }
+function handleError(err) {
+  console.log("uh oh");
+  console.log(err);
 }
 
-go();
+async function go() {
+  const pizza = await makePizza(["pineapple"]);
+  console.log(pizza);
+}
+// when you mark a function with async it will return a promise
+
+go().catch(handleError);
+
+go()
+  .then((result) => {
+    console.log(result);
+  })
+  .catch(handleError);
+
+  async function gogo() {
+      const result = await go();
+  }
+//  Catch it at runtime
+  gogo().catch(handleError);
+
+//   make a safe function with a HOF
+  function makeSafe(fn, errorHandler) {
+      return function() {
+          fn().catch(errorHandler)
+      }
+  }
+const safeGo = makeSafe(go, handleError);
+safeGo();
+
