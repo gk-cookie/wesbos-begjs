@@ -46,7 +46,7 @@ makePizza(["Pepperoni"])
       "Blackened Chicken",
       "BBQ Sauce, pepperoni",
       "mushrooms",
-      "onions"
+      "onions",
     ]);
   })
   .then((pizza) => {
@@ -101,3 +101,13 @@ makePizza(["Pepperoni"])
 //     console.log(pizza);
 //   })
 //   .catch(handleError);
+
+const p1 = makePizza(["feta", "cheddar", "peppers"]);
+const p2 = makePizza(["pineapple"]);
+const p3 = makePizza(["spinach", "ham", "swiss"]);
+
+const dinnerPromise2 = Promise.allSettled([p1, p2, p3]);
+
+dinnerPromise2.then((results) => {
+  console.log(results);
+});
