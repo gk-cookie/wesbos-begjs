@@ -1,5 +1,4 @@
 Copy the active file - alt + shift + c
-Clear the console/terminal - ctrl + l
 Command Palette - ctrl + shift + P  
 Prettier/Format Doc - shift + alt + f
 F2 - Renames Symbol (Will change all functions named ...)
@@ -7,3 +6,4 @@ Hold alt and click to create simultaneous cursors, ctrl moves to the end of the 
 Alt + Up/Down - Shifts line of code up or down
 Ctrl + Shift + K - Delete Line of Code
 Ctrl + L - Highligtht current line of Code
+ctrl + shift + L - hightlights all occurrences of current selection
