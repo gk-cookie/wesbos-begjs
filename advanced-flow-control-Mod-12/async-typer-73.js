@@ -6,14 +6,17 @@ function getRandomBetween(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-function draw(el) {
+async function draw(el) {
   const text = el.textContent;
   let soFar = "";
   for (const letter of text) {
     console.log(letter);
     soFar += letter;
     console.log(soFar);
-    
+    el.textContent = soFar;
+    const { typeMin, typeMax } = el.dataset;
+    const amountOfTimeToWait = getRandomBetween(typeMin, typeMax);
+    await wait(amountOfTimeToWait);
   }
 }
 
