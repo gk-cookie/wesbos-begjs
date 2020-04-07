@@ -29,6 +29,11 @@ function ask(options) {
       skipButton.type = "button";
       skipButton.textContent = "Cancel";
       popup.firstElementChild.appendChild(skipButton);
+      skipButton.addEventListener('click', function () {
+          resolve(null);
+          destroyPopup(popup);
+      },
+      {once: true})
     }
     popup.addEventListener(
       "submit",
@@ -45,3 +50,17 @@ function ask(options) {
     popup.classList.add("open");
   });
 }
+
+async function askQuestion(e) {
+  const button = e.currentTarget;
+  const cancel =  'cancel' in button.dataset;
+  const answer = await ask({
+    title: button.dataset.question,
+    cancel,
+  });
+  console.log(answer);
+}
+
+const buttons = document.querySelectorAll("[data-question]");
+buttons.forEach((button) => button.addEventListener("click", askQuestion));
+
