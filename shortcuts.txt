@@ -8,3 +8,4 @@ Alt + Up/Down - Shifts line of code up or down
 Ctrl + Shift + K - Delete Line of Code
 Ctrl + L - Highligtht current line of Code
 ctrl + shift + L - hightlights all occurrences of current selection
+ctrl + f - find
