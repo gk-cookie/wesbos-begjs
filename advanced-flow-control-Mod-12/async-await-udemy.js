@@ -31,10 +31,13 @@ Promise.all(promises).then((results) => {
 });
 
 const getData = async function () {
-  const [users, posts, albums] = await promises;
-  console.log("users", users);
-  console.log("posts", posts);
-  console.log("albums", albums);
+  try {
+    const [users, posts, albums] = await promises;
+    console.log("users", users);
+    console.log("posts", posts);
+    console.log("albums", albums);
+  } catch(err) {
+    console.log("oopps", err);
+  }
 };
-
 getData();
