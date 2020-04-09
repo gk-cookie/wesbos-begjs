@@ -1,0 +1,17 @@
+{
+  "name": "pixelated-face",
+  "version": "1.0.0",
+  "description": "",
+  "main": "face-detection-55.js",
+  "scripts": {
+    "start": "parcel face-detection-55.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "browserslist": [
+    "last 1 Chrome version"
+  ],
+  "dependencies": {
+    "parcel": "^2.0.0-alpha.3.2"
+  }
+}
