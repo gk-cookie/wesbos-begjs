@@ -38,7 +38,6 @@ async function detect() {
   const faces = await faceDetector.detect(video);
   // ask the browser when the next animation frame is, and tell it to run detect for us
   faces.forEach(drawFace);
-
   faces.forEach(censor);
   requestAnimationFrame(detect);
 }
@@ -87,4 +86,3 @@ function censor({ boundingBox: face }) {
 }
 
 populateVideo().then(detect);
-
