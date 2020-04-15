@@ -4,7 +4,9 @@
 // And
 // Xml
 
-const endpoint = "https://api.github.com/users/wesbos";
+const baseEndpoint = "https://api.github.com/";
+const usersEndpoint = `${baseEndpoint}/users`;
+
 const userEl = document.querySelector(".user");
 
 function handleError(err) {
@@ -13,7 +15,7 @@ function handleError(err) {
 }
 async function displayUser(username) {
   userEl.textContent = `loading...`;
-  const response = await fetch(endpoint);
+  const response = await fetch(`${usersEndpoint}/${username}`);
   const data = await response.json();
 
   console.log(data);
@@ -23,4 +25,4 @@ async function displayUser(username) {
   userEl.textContent = `${data.name} - ${data.blog}`;
 }
 
-displayUser();
+displayUser(wesbos).catch(handleError);
