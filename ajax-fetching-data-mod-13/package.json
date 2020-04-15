@@ -1,0 +1,18 @@
+{
+  "name": "ajax-fetching-data-mod-13",
+  "version": "1.0.0",
+  "description": "dogrecipes",
+  "main": "cors-recipes-75.js",
+  "scripts": {
+    "start": "parcel cors-recipes-75.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "browserslist": [
+    "last 1 chrome versions"
+  ]
+
+}
