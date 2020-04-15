@@ -19,12 +19,26 @@
 
 const baseEndpoint = `http://www.recipepuppy.com/api/`;
 const proxy = `https://cors-anywhere.herokuapp.com/`;
+const form = document.querySelector("form.search");
 
 async function fetchRecipes(query) {
   const res = await fetch(`${proxy}${baseEndpoint}?q=${query}`);
   const data = await res.json();
-  console.log(data);
+return data;
 }
 
+async function handleSubmit(event) {
+  event.preventDefault();
+  console.log(form.query.value);
+  
+  const el = event.currentTarget;
+  el.submit.disabled = true;
 
+  const recipes = await fetchRecipes(el.query.value);
+  console.log(recipes);
+  el.submit.disabled = false;
+  
+};
+
+form.addEventListener("submit", handleSubmit);
 fetchRecipes("pizza");
