@@ -10,3 +10,5 @@ Ctrl + L - Highligtht current line of Code
 ctrl + shift + L - hightlights all occurrences of current selection
 ctrl + f - find
 alt + b - opens html file in browser
+ctrl + i - emojis
+alt + tab - tabs last selection(eg browser to vscode)
