@@ -1,7 +1,7 @@
 const fromSelect = document.querySelector('[name="from_currency"]');
 const fromInput = document.querySelector('[name="from_amount"]');
 const toSelect = document.querySelector('[name="to_currency"]');
-const toEl = document.querySelector('.to_amount')
+const toEl = document.querySelector(".to_amount");
 const form = document.querySelector(".app form ");
 const endpoint = "https://api.exchangeratesapi.io/latest";
 const ratesByBase = {};
@@ -55,6 +55,12 @@ async function fetchRates(base = "USD") {
   const rates = await res.json();
   return rates;
 }
+function formatCurrency(amount, currency) {
+  return Intl.NumberFormat('en-US', {
+    style: "currency",
+    currency,
+  }).format(amount);
+}
 
 async function convert(amount, from, to) {
   if (!ratesByBase[from])
@@ -74,8 +80,8 @@ async function handleInput(e) {
     fromSelect.value,
     toSelect.value
   );
-  toEl.textContent = rawAmount;
-  
+
+  toEl.textContent = formatCurrency(rawAmount, toSelect.value);
 }
 
 const optionsHTML = generateOptions(currencies);
