@@ -1,8 +1,10 @@
 const fromSelect = document.querySelector('[name="from_currency"]');
+const fromInput = document.querySelector('[name="from_amount"]');
 const toSelect = document.querySelector('[name="to_currency"]');
-const endpoint = 'https://api.exchangeratesapi.io/latest';
+const toEl = document.querySelector('.to_amount')
+const form = document.querySelector(".app form ");
+const endpoint = "https://api.exchangeratesapi.io/latest";
 const ratesByBase = {};
-
 
 const currencies = {
   USD: "United States Dollar",
@@ -41,32 +43,43 @@ const currencies = {
 
 function generateOptions(options) {
   return Object.entries(options)
-  .map(
-      ([currencyCode, currencyName]) => 
-    `<option value ="${currencyCode}">${currencyCode} - ${currencyName}</option>`
-  ).join('');
+    .map(
+      ([currencyCode, currencyName]) =>
+        `<option value ="${currencyCode}">${currencyCode} - ${currencyName}</option>`
+    )
+    .join("");
 }
 
-async function fetchRates(base = 'USD'){
-    const res = await fetch(`${endpoint}?base=${base}`);
-    const rates = await res.json();
-    return rates;
-    
+async function fetchRates(base = "USD") {
+  const res = await fetch(`${endpoint}?base=${base}`);
+  const rates = await res.json();
+  return rates;
 }
 
 async function convert(amount, from, to) {
-if(!ratesByBase[from]) 
-console.log(`we dont have ${from} to convert to ${to}. Go get it`);
-const rates = await fetchRates(from);
-console.log(rates);
-ratesByBase[from] = rates;
+  if (!ratesByBase[from])
+    console.log(`we dont have ${from} to convert to ${to}. Go get it`);
+  const rates = await fetchRates(from);
+  console.log(rates);
+  ratesByBase[from] = rates;
 
-const rate = ratesByBase[from].rates[to]; 
-const convertedAmount = rate * amount;
-console.log(`${amount} ${from} is ${convertedAmount} in ${to}`);
-
+  const rate = ratesByBase[from].rates[to];
+  const convertedAmount = rate * amount;
+  console.log(`${amount} ${from} is ${convertedAmount} in ${to}`);
+  return convertedAmount;
 }
+async function handleInput(e) {
+  const rawAmount = await convert(
+    fromInput.value,
+    fromSelect.value,
+    toSelect.value
+  );
+  toEl.textContent = rawAmount;
+  
+}
+
 const optionsHTML = generateOptions(currencies);
 
 fromSelect.innerHTML = optionsHTML;
 toSelect.innerHTML = optionsHTML;
+form.addEventListener("input", handleInput);
