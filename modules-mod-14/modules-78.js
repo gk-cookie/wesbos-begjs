@@ -1,4 +1,5 @@
 import { returnHi as sayHi, middle, last } from './utils-78.js';
+import { handleButtonClick } from './handlers-78.js';
 // can be renamed by using as
 
 // import jimmy from './cook.js';
@@ -16,3 +17,6 @@ console.log(sayHi(name));
 
 console.log(middle, last);
 console.log(everything);
+
+const button = document.querySelector('button');
+button.addEventListener('click', handleButtonClick)
