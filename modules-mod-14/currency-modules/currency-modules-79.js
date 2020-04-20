@@ -1,7 +1,10 @@
-const fromSelect = document.querySelector('[name="from_currency"]');
-const fromInput = document.querySelector('[name="from_amount"]');
-const toSelect = document.querySelector('[name="to_currency"]');
-const toEl = document.querySelector(".to_amount");
+import { generateOptions } from "./utils-79.js";
+import currencies from "./currencies-79.js";
+import { handleInput } from "./handlers-79.js";
+import { convert } from "./lib-79.js";
+import { fromSelect, toSelect } from "./elements-79.js"
+
+
 const form = document.querySelector(".app form ");
 const endpoint = "https://api.exchangeratesapi.io/latest";
 const ratesByBase = {};

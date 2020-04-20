@@ -4,7 +4,7 @@ export async function fetchRates(base = "USD") {
     return rates;
   }
 
-  export async function convert(amount, from, to) {
+  export async function convert (amount, from, to) {
     if (!ratesByBase[from])
       console.log(`we dont have ${from} to convert to ${to}. Go get it`);
     const rates = await fetchRates(from);
@@ -16,3 +16,5 @@ export async function fetchRates(base = "USD") {
     console.log(`${amount} ${from} is ${convertedAmount} in ${to}`);
     return convertedAmount;
   }
+
+  
