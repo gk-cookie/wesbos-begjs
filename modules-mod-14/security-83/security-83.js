@@ -1,3 +1,4 @@
+import { sanitize } from 'dompurify';
 
 const input = document.querySelector('[name="input"]');
 const output = document.querySelector('.output');
