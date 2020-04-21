@@ -1,5 +1,7 @@
 Copy the active file - alt + shift + c
 Command Palette - ctrl + shift + P  
+ctrl + z - undo
+ctrl + y - redo
 Prettier/Format Doc - shift + alt + f
 F2 - Renames Symbol (Will change all functions named ...)
 ctrl + f2 - highlight all occurrences
@@ -12,3 +14,5 @@ ctrl + f - find
 alt + b - opens html file in browser
 ctrl + i - emojis
 alt + tab - tabs last selection(eg browser to vscode)
+shft + F12 - finds a reference to selected item
+ctrl + F12 - displays the declaration of the selected symbol in the code
