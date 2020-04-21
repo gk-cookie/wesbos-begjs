@@ -3,6 +3,7 @@ import { name } from "faker";
 import { formatDistance, format } from "date-fns";
 import axios from "axios";
 import { intersection, isEqual } from "lodash";
+import to from "await-to-js";
 
 console.log(`Hello ${name.firstName()} ${name.lastName()}`);
 const fakeNames = Array.from({ length: 10 }, name.firstName);
@@ -50,3 +51,29 @@ const name2 = { name: "cook" };
 console.log(name1 === name2); // returns false
 // if you need to check if all the values inside an object are the same use isEqual from lodash
 console.log(isEqual(name1, name2));
+
+function checkIfNameIsCool(firstName) {
+  return new Promise(function (resolve, reject) {
+    if (firstName === "Cook") {
+      resolve("Cool Name");
+      return;
+    }
+    reject(new Error("Bad Name"));
+  });
+}
+
+async function checkName() {
+    // const response = await to(checkIfNameIsCool("Cookie"));
+    // console.log(response);
+  const [err, successValue] = await to(checkIfNameIsCool("Cookie"));
+  if (err) {
+   console.log(err);
+   
+  } else {
+    console.log(successValue);
+  }
+}
+// always returns an array, can destructure
+checkName();
+
+
