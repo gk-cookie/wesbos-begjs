@@ -4,7 +4,10 @@ const input = document.querySelector('[name="input"]');
 const output = document.querySelector('.output');
 const buttons = document.querySelectorAll('nav button');
 input.addEventListener('input', () => {
-    const clean = sanitize(input.value);
+    const clean = sanitize(input.value, {
+        FORBID_ATTR: ['width', 'height', 'style'],
+        FORBID_TAGS: ['style'],
+    });
   output.innerHTML = clean.value.replace(/\n/g, '<br>');
 });
 
