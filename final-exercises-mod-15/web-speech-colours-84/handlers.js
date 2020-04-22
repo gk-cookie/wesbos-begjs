@@ -1,5 +1,7 @@
+function logWords(results) {
+console.log(results[results.length - 1][0].transcript);
+
+}
 export function handleResult(event) {
-  console.log(event);
-  console.log('working');
-  
+  logWords(events.results);
 }
